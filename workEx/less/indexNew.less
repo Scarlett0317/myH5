@@ -1,0 +1,326 @@
+@r:75rem;
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@keyframes move{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+};
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@keyframes rollIn1 {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 360deg);
+      transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 360deg);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+.w(){
+    width: 100%;
+    height: 100%;
+}
+html,
+body {
+    .w();
+    overflow: hidden;
+}
+.app{
+    .playBtn{
+        position: fixed;
+        right: 50/@r;
+        top: 50/@r;
+        background: url('../img/music.svg') no-repeat center center;
+        background-size: contain;
+        width: 100/@r ;
+        height:70/@r;
+        animation: move12 1s infinite linear;
+        animation-play-state: running;
+        z-index: 100;
+    }
+    .move{
+        animation: move 1s linear infinite;
+    }
+    .page-wrap {
+        overflow: hidden
+    }
+    
+    .page {
+        display: none;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0
+    }
+    
+    .contain {
+        width: 100%;
+        height: 100%;
+        display: none;
+        position: relative;
+        z-index: 0
+    }
+    
+    .current .contain,
+    .slide .contain {
+        display: block
+    }
+    
+    .current {
+        display: block;
+        z-index: 1
+    }
+    
+    .slide {
+        display: block;
+        z-index: 2
+    }
+    
+    .swipe {
+        display: block;
+        z-index: 3;
+        transition-duration: 0ms!important;
+        -webkit-transition-duration: 0ms!important
+    }
+    
+    .imgBox{
+        .bg_right{
+            position: relative;
+            right: -150/@r;
+            top: -70/@r;
+            width: 700/@r;
+            height: 700/@r;
+            animation: zoomIn 3s  linear ;
+        } 
+        .bg_left{
+            position: relative;
+            left: -100/@r;
+            bottom: -40/@r;
+            width: 700/@r;
+            height: 700/@r;
+            animation: zoomIn 3s linear ;  
+        }  
+        .img_box{
+            width: 70/@r ;
+            height:70/@r;
+            position: absolute;
+            left: 50/@r;
+            top: 200/@r;
+            animation:  fadeInDown 3s infinite linear;
+        }
+        .img_box1{
+            width: 200/@r ;
+            height:150/@r;
+            position: absolute;
+            right: -30/@r;
+            top: 630/@r;
+            animation:  fadeIn 3s infinite linear;
+        }
+        .img_box2{
+            width: 50/@r ;
+            height:50/@r;
+            position: absolute;
+            top: 750/@r ;
+            left: 300/@r;
+            animation:  fadeIn 6s 2s infinite linear;
+        }
+        .img_box3{
+            width: 70/@r ;
+            height:60/@r;
+            position: absolute;
+            top: 600/@r ;
+            left: 200/@r;
+            animation:  fadeIn 5s infinite linear;
+        }
+        .img_box4{
+            width: 200/@r ;
+            height:200/@r;
+            position: absolute;
+            top: 850/@r ;
+            left: 490/@r;
+            opacity: 0;
+            animation:  rotateOut 4s 4s linear;
+        }
+        .qz_box{
+            opacity: 0;
+            position: absolute;
+            top: 240/@r ;
+            left: 200/@r;
+            background: url('../img/qz.webp') no-repeat 150% -10%;
+            background-size: contain;
+            width: 320/@r ;
+            height:170/@r;
+            animation: rollIn 2s 1 1s linear;
+            animation-fill-mode: forwards;
+            div{
+                float: right;
+                width: 50% ;
+                height:100%;
+                background: url('../img/round.webp') no-repeat 150% -10%;
+                background-size: contain;
+                animation:  fadeIn 1s 3 linear;
+            }
+        }
+        .jl_box{
+            opacity: 0;
+            position: absolute;
+            top: 420/@r ;
+            left: 200/@r;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('../img/jl.webp') no-repeat 150% -10%;
+            background-size: contain;
+            width: 320/@r ;
+            height:170/@r;
+            animation: rollIn1 2s 2s linear;
+            animation-fill-mode: forwards;
+            div{
+                width: 55% ;
+                height:100%;
+                background: url('../img/resume.webp') no-repeat right center;
+                background-size: contain;
+                animation: fadeIn  1s  1s linear;
+            }
+        }
+        
+  
+    }
+    .text{
+        .w();
+        font-size: 36/@r;
+        font-weight: 200;
+        color:darkgreen;
+        //第一页    
+        .header_title{
+            font-size: 30/@r;
+            position: absolute;
+            left: 250/@r;
+            top: 100/@r;
+          }
+        .writing{
+            position: absolute;
+            top: 650/@r ;
+            left: 300/@r;
+            line-height: 100/@r;
+            text-align: center;
+            font-size: 40/@r;
+            .writing-w{
+                display: block;
+                width: 100/@r;
+                background:  url('../img/round.webp') no-repeat center center;
+            }
+            li:nth-child(3){
+                background: green;
+                border-radius: 50%;
+                color: aliceblue;
+            }
+        }
+        .name{
+            position: absolute;
+            bottom: 70/@r ;
+            left: 260/@r;
+            line-height: 70/@r;
+            font-size: 30/@r;
+            text-align: center; 
+        }
+        //第二页
+        .writing_jj{
+            position: relative;
+            left: 340/@r;
+            top: 200/@r;
+            width: 300/@r;
+            height: 400/@r;
+            line-height: 65/@r;
+            font-size: 40/@r;
+            font-weight: 200;
+            text-align: center;
+            animation: fadeInRight 2s .5s linear;
+        }
+        .title_gr{
+            font-size: 50/@r;
+        }   
+        .introduce_j{
+          position: absolute;
+          left: 150/@r;
+          top: 560/@r;
+          width: 500/@r;
+          line-height: 40/@r;
+          font-size: 34/@r;
+          font-weight: 200;
+          animation: fadeInRight 3s 1s linear;
+        }
+        .introduce_n{
+            position: absolute;
+            left: 150/@r;
+            bottom: 300/@r;
+            width: 500/@r;
+            line-height: 40/@r;
+            font-size: 34/@r;
+            font-weight: 200;
+            margin: 0 auto;
+            animation: fadeInRight 3s 2s linear;
+        }
+
+        .enter_img{
+            position: absolute;
+            left: 80/@r;
+            top:120/@r;
+            background: url('../img/enter.webp') no-repeat;
+            background-size: 100%;
+            width: 50/@r;
+            height: 50/@r;
+            z-index: 100;
+            animation: fadeInLeft 2s 2s linear;
+        }
+        .enter_img2{
+            position: absolute;
+            left: 80/@r;
+            top:570/@r;
+            animation: fadeInLeft 2s 2s linear;
+        }
+        .enter_img3{
+            position: absolute;
+            left: 80/@r;
+            bottom: 100/@r;
+            animation: fadeInLeft 2s 2s linear;
+        }
+        .photo{
+          position: absolute;
+          left: 70/@r;
+          top:200/@r;
+          width: 250/@r;
+          height: 300/@r;
+          background: url(../img/lei.jpg) no-repeat center center;
+          background-size:100%;
+          z-index: 100;
+          animation: fadeIn 1s 2s linear;
+        }
+    }
+}
